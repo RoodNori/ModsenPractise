@@ -2,10 +2,10 @@
 
 function printVariables() {
     {
-        const x = 1;
-        console.log(x);
+        const X = 1;
+        console.log(X);
     }
-    console.log(x);
+    console.log(X);
     {
         let x = 2;
         console.log(x)
