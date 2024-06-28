@@ -1,44 +1,49 @@
 import * as React from 'react';
+import * as hStyle from './styled';
 
-interface HeaderProps {}
+interface IProps {}
 
 function Search() {
   return (
-    <div>
+    <hStyle.sFlex>
       <input type="search"></input>
-      <div></div>
-    </div>
+      <hStyle.iconDiv />
+    </hStyle.sFlex>
   );
 }
 
 function Filter() {
   return (
-    <div>
-      <span>Categories</span>
-      <select>
-        <option value="">all</option>
-        <option value="art">art</option>
-        <option value="biogaphy">biogaphy</option>
-        <option value="computers">computers</option>
-        <option value="history">history</option>
-        <option value="medical">medical</option>
-        <option value="poetry">poetry</option>
-      </select>
-      <span>Sorting by</span>
-      <select>
-        <option value="">revelance</option>
-        <option value="newest">newest</option>
-      </select>
-    </div>
+    <hStyle.flexDiv>
+      <hStyle.fGrid>
+        <hStyle.span>Categories</hStyle.span>
+        <hStyle.select>
+          <option value="">all</option>
+          <option value="art">art</option>
+          <option value="biogaphy">biogaphy</option>
+          <option value="computers">computers</option>
+          <option value="history">history</option>
+          <option value="medical">medical</option>
+          <option value="poetry">poetry</option>
+        </hStyle.select>
+      </hStyle.fGrid>
+      <hStyle.fGrid>
+        <hStyle.span>Sorting by</hStyle.span>
+        <hStyle.select>
+          <option value="">relevance</option>
+          <option value="newest">newest</option>
+        </hStyle.select>
+      </hStyle.fGrid>
+    </hStyle.flexDiv>
   );
 }
 
 export default function Header() {
   return (
-    <div>
-      <h1>Search for book</h1>
+    <hStyle.hGrid>
+      <hStyle.h1>Search for books</hStyle.h1>
       <Search />
       <Filter />
-    </div>
+    </hStyle.hGrid>
   );
 }

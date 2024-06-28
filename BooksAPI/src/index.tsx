@@ -1,14 +1,17 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
-import Header from './components/Header/index';
+import Header from './components/Header';
+import Main from './components/Main';
+import { GlobalStyles } from './styled';
 
-interface AppProps {}
+interface IProps {}
 
 function App() {
   return (
     <>
-    <Header />
-    
+      <GlobalStyles />
+      <Header />
+      <Main />
     </>
   );
 }

@@ -9,13 +9,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'), // Путь для выходного файла сборки
   },
   resolve: {
-    extensions: ['.ts', '.tsx'],
+    extensions: ['.svg', '.jpg', '.ts', '.tsx', '.js'],
   },
   module: {
     rules: [
       {
-        test: /\.css$/, // Регулярное выражение для обработки файлов с расширением .css
-        use: ['style-loader', 'css-loader'], // Загрузчики, используемые для обработки CSS-файлов
+        test: /\.(png|jpg|svg)$/i,
+        type: 'asset/resource',
       },
       {
         test: /\.tsx?$/,
@@ -28,6 +28,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
+      filename: 'index.html'
     }),
   ],
 
