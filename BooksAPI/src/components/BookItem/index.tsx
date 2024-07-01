@@ -1,12 +1,12 @@
 import * as React from 'react';
-//import from './styled';
+import * as bookItemStyle from './styled';
 
 interface IProps {}
 
 export default function BookItem(prop) {
   return (
     <>
-        
+
       
     </>
   );

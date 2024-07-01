@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as hStyle from './styled';
 
-interface IProps {}
+const categories: Array<string> = ['art', 'biogaphy', 'computers', 'history', 'medical', 'poetry'];
 
 function Search() {
   return (
@@ -19,12 +19,9 @@ function Filter() {
         <hStyle.span>Categories</hStyle.span>
         <hStyle.select>
           <option value="">all</option>
-          <option value="art">art</option>
-          <option value="biogaphy">biogaphy</option>
-          <option value="computers">computers</option>
-          <option value="history">history</option>
-          <option value="medical">medical</option>
-          <option value="poetry">poetry</option>
+          {categories.map(item => 
+            <option value={item}>{item}</option>
+          )}
         </hStyle.select>
       </hStyle.fGrid>
       <hStyle.fGrid>

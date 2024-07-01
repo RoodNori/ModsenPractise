@@ -5,7 +5,7 @@ interface getBooksProps {
   offset: number;
 }
 
-interface getBooksResultProps {
+type getBooksResult = {
   totalItems: number;
   items: Array<Book>;
 }
@@ -29,8 +29,8 @@ export function getBooks({
   ordering,
   filtering,
   offset = 0,
-}: getBooksProps): getBooksResultProps {
-  let result: getBooksResultProps;
+}: getBooksProps): getBooksResult {
+  let result: getBooksResult;
   let books: Array<Book> = new Array<Book>();
 
   fetch(

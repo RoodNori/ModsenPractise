@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import shapka from '../../assets/books.jpg';
-import icon from '../../assets/search1.svg';
+import shapka from '../../assets/Header/books.jpg';
+import icon from '../../assets/Header/search1.svg';
 
-interface IProps {}
 
 const Grid = styled.div`
     display: grid;
