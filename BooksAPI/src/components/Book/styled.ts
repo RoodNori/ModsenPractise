@@ -10,7 +10,6 @@ export const grid = styled.div`
     grid-template: 1fr repeat(auto)(3) / 1fr;
     gap: 4%;
     background-color: rgb(252, 250, 184);
-    cursor: pointer;
 `;
 
 export const categorie = styled(span)`
