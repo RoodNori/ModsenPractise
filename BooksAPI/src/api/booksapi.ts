@@ -16,7 +16,7 @@ export class Book {
   readonly categories: Array<string>;
   readonly cover: string;
   readonly description: string;
-  readonly tag: string;
+  readonly id: string;
 
   constructor(obj) {
     this.title = obj.volumeInfo.title ?? '';
@@ -24,7 +24,7 @@ export class Book {
     this.categories = obj.volumeInfo.categories ?? [];
     this.cover = obj.volumeInfo.imageLinks.thumbnail ?? '';
     this.description = obj.volumeInfo.description ?? '';
-    this.tag = obj.etag ?? '';
+    this.id = obj.id ?? '';
   }
 }
 
@@ -58,14 +58,21 @@ export async function getBooks({
   return result;
 }
 
-export function getBook(id: string): Book {
+export async function getBook(id: string): Promise<Book> {
   let book: Book;
 
-  fetch(`https://www.googleapis.com/books/v1/volumes/${id}`)
-    .then((res) => res.json())
-    .then((json) => {
-      book = new Book(json);
-    });
+  try {
+    let res = await fetch(
+      `https://www.googleapis.com/books/v1/volumes/${id}`,
+      {
+        method: 'GET',
+        mode: 'cors',
+      },
+    );
+    let json = await res.json();
+    
+    book = new Book(json);
+  } catch (err) {}
 
   return book;
 }

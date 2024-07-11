@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const flex = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1vw;

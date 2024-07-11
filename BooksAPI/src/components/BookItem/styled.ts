@@ -4,12 +4,12 @@ const span = styled.span`
     font-size: 1.1em;
 `;
 
-export const grid = styled.div`
+export const flex = styled.div`
     flex-basis: 20%;
-    display: grid;
-    grid-template: 1fr repeat(auto)(3) / 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 4%;
-    background-color: rgb(252, 250, 184);
+    background-color: rgb(243, 242, 241);
     cursor: pointer;
 `;
 
@@ -22,14 +22,10 @@ export const title = styled(span)`
     font-weight: bold;
 `
 
-export const p = styled.p`
-    margin-top: 0;
-`
-
 export const author = styled(span)`
     opacity: 0.5;
 `
 
 export const img = styled.img`
-    justify-self: center;
+    align-self: center;
 `;

@@ -8,14 +8,20 @@ const categories: Array<string> = ['art', 'biography', 'computers', 'history', '
 export default function Filter() {
   const dispatch = useAppDispatch();
 
+  function setOption(select: string) {
+    return (event: React.ChangeEvent<HTMLSelectElement>) => {
+      if (select === 'filter')
+        dispatch(setFiltering(event.target.value));
+      else dispatch(setSorting(event.target.value));
+    }
+  }
+
   return (
     <styledFilter.flex>
       <styledFilter.grid>
         <styledFilter.span>Categories</styledFilter.span>
         <styledFilter.select
-          onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
-            dispatch(setFiltering(event.target.value));
-          }}
+          onChange={setOption('filter')}
         >
           <option value="">all</option>
           {categories.map((item, index) => (
@@ -26,9 +32,7 @@ export default function Filter() {
       <styledFilter.grid>
         <styledFilter.span>Sorting by</styledFilter.span>
         <styledFilter.select
-          onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
-            dispatch(setSorting(event.target.value));
-          }}
+          onChange={setOption('sort')}
         >
           <option value="">relevance</option>
           <option value="newest">newest</option>

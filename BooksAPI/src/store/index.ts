@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 import searchReducer from './reducers/searchReducer';
 import renderMainReducer from './reducers/renderMainReducer';
+import loadingReducer from './reducers/loadingReducer';
 
 export const store = configureStore({
   reducer: {
     search: searchReducer,
     renderMain: renderMainReducer,
+    loading: loadingReducer
   },
 });
 

@@ -1,34 +1,42 @@
 import styled from 'styled-components';
 
 const span = styled.span`
-    font-size: 1.1em;
+  font-size: 1.1em;
 `;
 
 export const grid = styled.div`
-    flex-basis: 20%;
-    display: grid;
-    grid-template: 1fr repeat(auto)(3) / 1fr;
-    gap: 4%;
-    background-color: rgb(252, 250, 184);
+  display: flex;
+  flex-direction: column;
+  gap: 4%;
+`;
+
+export const flex = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;
 
 export const categorie = styled(span)`
-    text-decoration: underline;
-    opacity: 0.5;
-`
+  opacity: 0.5;
+`;
 
-export const title = styled(span)`
-    font-weight: bold;
-`
+export const title = styled.span`
+  font-size: 2em;
+  font-weight: bold;
+`;
 
-export const p = styled.p`
-    margin-top: 0;
-`
+export const description = styled.p`
+  font-size: 1.1em;
+  border: 1px black solid;
+`;
 
 export const author = styled(span)`
-    opacity: 0.5;
-`
+  text-decoration: underline;
+  opacity: 0.5;
+`;
 
 export const img = styled.img`
-    justify-self: center;
+  background-color: rgb(243, 242, 241);
+  //align-self: center;
 `;

@@ -1,3 +1,0 @@
-{
-    "*.{ts|tsx|html}": "prettier --config .prettierrc.json --write"
-}
